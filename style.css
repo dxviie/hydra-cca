@@ -1,14 +1,52 @@
-/* CSS files add styling rules to your content */
+:root {
+  --accent-color: #b52d2c;
+  --bg-color: #f3f4f6;
+  --fg-color: #333;
+}
 
-body, html {
-  font-family: helvetica, arial, sans-serif;
+body,
+html {
+  font-family: "Poppins", sans-serif;
   margin: 0px;
-  background-color: #ffff00
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.logo {
+  display: block;
+  margin-inline: auto;
+  max-width: 10rem;
+  width: 100%;
+}
+
+.avatar {
+  display: block;
+  margin-inline: auto;
+  max-width: 8rem;
+  width: 100%;
+  border-radius: 50%;
 }
 
 h1 {
-  font-style: italic;
-  color: #ff0066;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-family: 'Bitter', serif;
+  font-size: 3rem;
+}
+
+h2 {
+  padding: .8rem;
+  background-color: black;
+  color: white;
+  font-family: 'Bitter', serif;
+  font-size: 2rem;
 }
 
 button {
@@ -18,16 +56,36 @@ button {
   margin: 10px;
 }
 
+section {
+  background-color: white;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  opacity: .85;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
 p {
-  background-color: rgba(255,255,255,0.7);
-  font-color: black;
+  /* white-space: pre-wrap; */
+}
+
+.invisible {
+  opacity: 0;
 }
 
 code {
-  background-color: black;
-  font-family: monospace,courier;
+  opacity: .8;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   border: solid white 2px;
   color: #99cc99;
+  white-space: pre;
+  font-size: xx-large;
+  background-color: black;
+  padding-right: 3rem;
+  mix-blend-mode: multiply;
 }
 
 canvas {
@@ -40,25 +98,42 @@ canvas {
   width: 100%;
   height: 100%;
   display: block;
+  mix-blend-mode: normal;
 }
 
-#main {
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: 1;
 }
 
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  width: 42rem;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
 .spacer {
-width: 512px;
-height: 512px;
-position: relative;
+  /* width: 512px; */
+  height: 768px;
+  position: relative;
 
 }
 
 .spacer-small {
-width: 128px;
-height: 128px;
-position: relative;
+  /* width: 128px; */
+  height: 256px;
+  position: relative;
 
 }

@@ -7,6 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Fonts because typography is important. And fun. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=VT323&display=swap"
+    rel="stylesheet">
+
   <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="./style.css" />
 
@@ -15,45 +22,260 @@
 </head>
 
 <body>
-  <div id="main">
-    <h1>hydra inside a webpage</h1>
+  <div id="container">
+    <div id="main">
+      <h1>Hydra⚡Intro</h1>
+      <p>by</p>
+      <a href="https://cca.codes" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 60" class="logo">
+          <title>Creative Coding Amsterdam Logo</title>
+          <g fill="none" stroke="var(--fg-color)" stroke-width="12" stroke-linecap="round">
+            <path d="M 46.97 13.029 A 24 24 1 1 0 46.97 46.97" />
+            <path d="M 97.97 13.029 A 24 24 1 1 0 97.97 46.97" />
+            <path d="M 156 29.96 A 24 24 1 1 0 156 30 v 24" stroke="var(--accent-color)" />
+          </g>
+        </svg>
+      </a>
+      <p>and</p>
+      <a href="https://d17e.dev" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.d17e.dev/_next/image?url=%2Favatar_me_vera_round.png&w=256&q=75" alt="d17e avatar"
+          class="avatar" />
+      </a>
+      <div class="spacer-small"></div>
 
-    <div class="spacer-small"></div>
+      <section>
+        <h2>https://hydra.ojack.xyz</h2>
+      </section>
 
-    <p>↓continue scrolling↓</p>
+      <code class="invisible">
+        solid(1,1,1)
+        .out()
+      </code>
+      <div class="spacer-small"></div>
 
-    <div class="spacer-small"></div>
+      <h2>What is Hydra?</h2>
+      <section>
+        <p>Hydra is a web-based live-coding environment that allows you to create visuals using JavaScript and WebGL. It
+          is inspired by analog modular synthesizers and early video synthesis. Hydra allows you to create visuals
+          collaboratively in a browser window, and stream them in real time.</p>
+        <ul>
+          <li>
+            <a href="https://hydra.ojack.xyz/" target="_blank" rel="noopener noreferrer">Hydra editor:
+              <b>hydra.ojack.xyz</b></a>
+          </li>
+          <li>
+            <a href="https://github.com/dxviie/hydra-cca/blob/main/README.md">More links on Githb:
+              dxviie/hydra-cca/README.md</a>
+          </li>
+          <li>
+            <a href="https://hydra.ojack.xyz/api/" target="_blank" rel="noopener noreferrer">Hydra API Reference</a>
+          </li>
+        </ul>
 
-    <code>shape(99).scale(1,1,()=>window.innerWidth/window.innerHeight).mult(osc(20,0.1,2)).modulateScale(osc(1,2).invert(),0.5,0.5).out()</code>
+      </section>
+      <div class="spacer-small"></div>
 
-    <div class="spacer"></div>
+      <section>
+        This is Hydra!
+      </section>
+      <code>
+        solid(1, 1, 1)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <code>solid(0,0,0).layer(src(o0).scale(1.01).mask(shape(99).scale(1,1,()=>window.innerWidth/window.innerHeight))).blend(shape(99).scale(1,1,()=>window.innerWidth/window.innerHeight).mult(osc(20,0.1,2)),0.1).out()</code>
+      <code>
+        solid(1, 0, 1)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <div class="spacer"></div>
+      <code>
+        solid(1, 0, 0)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <code>src(o0).modulateHue(src(o0).scale(1.01),1).out()</code>
+      <code>
+        solid(0, 0, 0)
+        .out()
+      </code>
+      <div class="spacer-small"></div>
 
-    <div class="spacer"></div>
+      <section>
+        Let's do a real demo?<br />
+        from <a href=" https://hydra-scrollable-webpage.glitch.me/" target="_blank"
+          rel="noopener noreferrer">hydra-scrollable-webpage</a>
+      </section>
+      <div class="spacer"></div>
 
-    <code>src(o0).scale(1.01).out()</code>
+      <code>
+        shape(99)
+        .scale(1, 1, ()=> window.innerWidth / window.innerHeight)
+        .mult(osc(20, 0.1, 2))
+        .modulateScale(
+          osc(1, 2).invert(), 0.5, 0.5)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <div class="spacer"></div>
+      <code>
+        solid(0, 0, 0)
+        .layer(src(o0)
+        .scale(1.01).mask(
+          shape(99)
+          .scale(1, 1, () => window.innerWidth/window.innerHeight)))
+        .blend(
+          shape(99)
+          .scale(1,1,() => window.innerWidth/window.innerHeight)
+          .mult(osc(20, 0.1, 2))
+          , 0.1)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <code>src(o0).modulateRotate(src(o0).scale(1.01).hue(()=>time/9).brightness(-0.3),.01).out()</code>
+      <code>
+        src(o0)
+        .modulateHue(
+          src(o0)
+          .scale(1.01)
+          , 1)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <div class="spacer"></div>
+      <code>
+        src(o0)
+        .scale(1.01)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <code>src(o0).modulatePixelate(src(o0).hue(()=>time/9).r().contrast(2).pixelate(32,32),1024,8).out()</code>
+      <code>
+        src(o0)
+        .modulateRotate(
+          src(o0)
+          .scale(1.01)
+          .hue(() => time/9)
+          .brightness(-0.3), .01)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <div class="spacer"></div>
+      <code>
+        src(o0)
+        .modulatePixelate(
+          src(o0)
+            .hue(()=>time/9)
+            .r()
+            .contrast(2)
+            .pixelate(32,32)
+          , 1024
+          , 8)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <code>src(o0).scale(0.99).out()</code>
+      <code>
+        src(o0)
+        .scale(0.99)
+        .out()
+      </code>
+      <div class="spacer"></div>
 
-    <div class="spacer"></div>
-  </div>
+      <h1>
+        👀👀👀
+      </h1>
+      <div class="spacer"></div>
 
-  <script src="./script.js"></script>
+      <h2>What just happened?</h2>
+      <section>
+        Well, I'm not exactly sure actually.<br />
+        But I do know a few things that I want to share here, so should help us understand what's going on.
+      </section>
+      <div class="spacer"></div>
+
+      <h2>Sources</h2>
+      <section>
+        <p>Hydra uses a few different types of sources to create visuals. These sources can be combined and manipulated
+          in various ways to create complex visuals.</p>
+        <ul>
+          <li>osc - oscillators</li>
+          <li>shape - basic shapes</li>
+          <li>solid - solid colors</li>
+          <li>gradient - gradients</li>
+          <li>noise - Perlin noise</li>
+          <li>voronoi - Voronoi diagrams</li>
+          <li>video - video input</li>
+          <li>webcam - webcam input</li>
+          <li>text - text input</li>
+          <li>src - output of another layer</li>
+        </ul>
+      </section>
+      <div class="spacer"></div>
+
+      <h2>Colors</h2>
+      <section>
+        <p>Colors in Hydra are represented as RGB values. The values range from 0 to 1, with 0 being the lowest value
+          and 1 being the highest value. You can use the <code>solid</code> source to create solid colors.</p>
+      </section>
+      <div class="spacer"></div>
+
+      <h2>Blending</h2>
+      <section>
+        <p>Blending is the process of combining two or more sources together to create a new source. Hydra provides
+          several blending modes that you can use to create different effects.</p>
+        <ul>
+          <li>add - adds the values of the sources together</li>
+          <li>diff - subtracts the values of the sources</li>
+          <li>mult - multiplies the values of the sources</li>
+          <li>screen - screens the values of the sources</li>
+          <li>overlay - overlays the values of the sources</li>
+          <li>hardlight - hardlights the values of the sources</li>
+          <li>lighten - lightens the values of the sources</li>
+          <li>darken - darkens the values of the sources</li>
+          <li>difference - calculates the absolute difference between the values of the sources</li>
+          <li>exclusion - similar to difference, but with lower contrast</li>
+          <li>hue - changes the hue of the source</li>
+          <li>saturation - changes the saturation of the source</li>
+          <li>brightness - changes the brightness of the source</li>
+          <li>color - changes the color of the source</li>
+          <li>luminosity - changes the luminosity of the source</li>
+        </ul>
+      </section>
+      <div class="spacer"></div>
+
+      <h2>Geometry</h2>
+      <section>
+        <p>Hydra provides several functions that you can use to manipulate the geometry of the sources. These functions
+          allow you to scale, rotate, translate, and mask the sources to create different effects.</p>
+        <ul>
+          <li>scale - scales the source</li>
+          <li>rotate - rotates the source</li>
+          <li>translate - translates the source</li>
+          <li>mask - masks the source</li>
+          <li>repeat - repeats the source</li>
+          <li>pixelate - pixelates the source</li>
+          <li>modulate - modulates the source</li>
+          <li>modulateHue - modulates the hue of the source</li>
+          <li>modulatePixelate - modulates the pixelation of the source</li>
+          <li>modulateScale - modulates the scale of the source</li>
+          <li>modulateRotate - modulates the rotation of the source</li>
+          <li>modulateKaleid - modulates the kaleidoscope effect of the source</li>
+          <li>modulateRepeat - modulates the repetition of the source</li>
+          <li>modulateScroll - modulates the scrolling of the source</li>
+          <li>modulateScale - modulates the scale of the source</li>
+          <li>modulateRotate - modulates the rotation of the source</li>
+          <li>modulateKaleid - modulates the kaleidoscope effect of the source</li>
+          <li>modulateRepeat - modulates the repetition of the source</li>
+          <li>modulateScroll - modulates the scrolling of the source</li>
+        </ul>
+      </section>
+      <div class="spacer"></div>
+
+    </div>
+    <!-- handling the intersection observers -->
+    <script src="./script.js"></script>
 </body>
 
 </html>

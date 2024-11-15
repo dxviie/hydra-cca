@@ -19,8 +19,8 @@ const codeblocks = document.querySelectorAll("code");
 
 let initialized = false;
 
-for(const cb of codeblocks) {
-  if(initialized == false) {
+for (const cb of codeblocks) {
+  if (initialized == false) {
     eval(cb.textContent);
     initialized = true;
   }
@@ -32,13 +32,15 @@ for(const cb of codeblocks) {
       // solid(0,0,0,0).out(o1)
       // solid(0,0,0,0).out(o2)
       // solid(0,0,0,0).out(o3)
+      // remove all formatting from textContent
+      let code = cb.textContent.replace(/\n/g, '');
+      code = code.replace(/ /g, '');
       render(o0);
-      setTimeout(()=>{
-        eval(cb.textContent)
+      setTimeout(() => {
+        eval(code)
       }, 60);
     }
   }, { threshold: [0.7] });
 
   observer.observe(cb);
 }
-      
