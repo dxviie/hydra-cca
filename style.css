@@ -16,6 +16,7 @@ html {
     linear-gradient(-45deg, transparent 75%, #ccc 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -78,6 +79,31 @@ p {
   text-decoration: none;
 }
 
+.hydra-source {
+  border-bottom: 4px solid hsl(10, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-geometry {
+  border-bottom: 4px solid hsl(50, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-color {
+  border-bottom: 4px solid hsl(90, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-blend {
+  border-bottom: 4px solid hsl(130, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-modulate {
+  border-bottom: 4px solid hsl(170, 100%, 70%);
+  line-height: 0.6
+}
+
 code {
   opacity: .8;
   font-family: "Pixelify Sans", sans-serif;
@@ -89,7 +115,6 @@ code {
   font-size: xx-large;
   background-color: black;
   padding-right: 3rem;
-  mix-blend-mode: multiply;
 }
 
 canvas {

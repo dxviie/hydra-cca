@@ -205,26 +205,45 @@
       <h2>What just happened?</h2>
       <section>
         Well, I'm not exactly sure actually.<br /><br />
-        But I do know a few things that I want to share here,<br />
+        But I do know a few things that I want to share here,
         that should help you along at least a little bit...
       </section>
       <div class="spacer"></div>
 
-      <h2>Sources</h2>
+      <code>
+        src(o0)
+        .mult(solid(), 0.01)
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+      <code>
+        solid()
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+      <section>
+        There are five types of functions in hydra:<br /> <span class="hydra-source">source</span>, <span
+          class="hydra-geometry">geometry</span>,
+        <span class="hydra-color">color</span>, <span class="hydra-blend">blend</span> and <span
+          class="hydra-modulate">modulate</span>
+      </section>
+      <div class="spacer-small"></div>
+
+      <h2 class="hydra-source">Sources</h2>
       <section>
         <p>Hydra uses a few different types of sources to create visuals. These sources can be combined and manipulated
           in various ways to create complex visuals.</p>
         <ul>
-          <li>osc - oscillators</li>
-          <li>shape - basic shapes</li>
-          <li>solid - solid colors</li>
-          <li>gradient - gradients</li>
-          <li>noise - Perlin noise</li>
-          <li>voronoi - Voronoi diagrams</li>
-          <li>video - video input</li>
-          <li>webcam - webcam input</li>
-          <li>text - text input</li>
-          <li>src - output of another layer</li>
+          <li><span class="hydra-source">solid</span>: solid colors</li>
+          <li><span class="hydra-source">gradient</span>: gradients</li>
+          <li><span class="hydra-source">shape</span>: basic shapes</li>
+          <li><span class="hydra-source">osc</span>: oscillators</li>
+          <li><span class="hydra-source">noise</span>: Perlin noise</li>
+          <li><span class="hydra-source">voronoi</span>: Voronoi diagrams</li>
+          <li><span class="hydra-source">src</span>: output of another layer</li>
+          <li>...</li>
         </ul>
       </section>
       <div class="spacer"></div>
