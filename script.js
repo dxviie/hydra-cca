@@ -27,14 +27,12 @@ for (const cb of codeblocks) {
 
   var observer = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting === true) {
-      // hush();
-      // solid(0,0,0,0).out(o0)
-      // solid(0,0,0,0).out(o1)
-      // solid(0,0,0,0).out(o2)
-      // solid(0,0,0,0).out(o3)
-      // remove all formatting from textContent
-      let code = cb.textContent.replace(/\n/g, '');
-      code = code.replace(/ /g, '');
+      let code = cb.textContent
+        .split('\n')
+        .filter(line => !line.trim().startsWith('//'))
+        .join('\n')
+        .replace(/\n/g, '')
+        .replace(/ /g, '');
       render(o0);
       setTimeout(() => {
         eval(code)

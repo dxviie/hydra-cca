@@ -67,10 +67,6 @@ section {
   border-radius: 1rem;
 }
 
-p {
-  /* white-space: pre-wrap; */
-}
-
 .invisible {
   opacity: 0;
 }
@@ -106,6 +102,11 @@ p {
 
 .hydra-synth-settings {
   border-bottom: 4px solid hsl(250, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-array {
+  border-bottom: 4px solid hsl(290, 100%, 70%);
   line-height: 0.6
 }
 
@@ -176,15 +177,27 @@ canvas {
 
 pre {
   font-size: xx-large;
-  white-space: normal;
   font-family: "Pixelify Sans", sans-serif;
   font-weight: 100;
+  white-space: normal;
+}
+
+.emoji {
+  font-size: 3rem;
+}
+
+.multi-line {
+  white-space: pre;
 }
 
 @media (max-width: 768px) {
   code {
     font-size: large;
     padding-right: 1.5rem;
+  }
+
+  pre {
+    font-size: large;
   }
 
   h1 {
@@ -201,13 +214,5 @@ pre {
 
   .avatar {
     max-width: 5rem;
-  }
-
-  .spacer {
-    height: 20rem;
-  }
-
-  .spacer-small {
-    height: 5rem;
   }
 }

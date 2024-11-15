@@ -55,21 +55,26 @@
         <img src="https://www.d17e.dev/_next/image?url=%2Favatar_me_vera_round.png&w=256&q=75" alt="d17e avatar"
           class="avatar" />
       </a>
-      <div class="spacer-small"></div>
 
+      <div class="spacer-mini"></div>
+      🐰
       <a href="https://hydra.ojack.xyz" target="_blank" rel="noopener noreferrer" class="no-link">
         <h2>https://hydra.ojack.xyz</h2>
       </a>
+
 
       <code class="invisible">
         solid(1,1,1)
         .out()
       </code>
-      <div class="spacer-small"></div>
+      <div class="spacer-mini"></div>
 
+      🐰
       <h2>What is Hydra?</h2>
       <section>
-        <p>Hydra is a web-based live-coding environment that allows you to create visuals using JavaScript and WebGL. It
+        <p>Hydra is an open-source project initiated by Olivia Jack.<br />
+          It is a web-based live-coding environment that
+          allows you to create visuals using JavaScript and WebGL. It
           is inspired by analog modular synthesizers and early video synthesis. Hydra allows you to create visuals
           collaboratively in a browser window, and stream them in real time.</p>
         <ul>
@@ -78,11 +83,15 @@
               <b>hydra.ojack.xyz</b></a>
           </li>
           <li>
-            <a href="https://github.com/dxviie/hydra-cca/blob/main/README.md">More links on Githb:
-              dxviie/hydra-cca/README.md</a>
+            <a href="https://hydra.ojack.xyz/api/" target="_blank" rel="noopener noreferrer">Hydra API Reference</a>
           </li>
           <li>
-            <a href="https://hydra.ojack.xyz/api/" target="_blank" rel="noopener noreferrer">Hydra API Reference</a>
+            <a href="https://opencollective.com/hydra-synth" target="_blank" rel="noopener noreferrer">Hydra Community
+              Fund</a>
+          </li>
+          <li>
+            <a href="https://github.com/dxviie/hydra-cca/blob/main/README.md">More links on Githb:
+              dxviie/hydra-cca/README.md</a>
           </li>
         </ul>
 
@@ -306,70 +315,179 @@
         speed = 1;
         gradient(10).out()
       </code>
+      <div class="spacer"></div>
+
+      <h2 class="hydra-source">shape</h2>
+      <section>
+        <pre class="multi-line">
+          shape( 
+            sides = 3, 
+            radius = 0.3, 
+            smoothing = 0.01 
+          )</pre>
+      </section>
+      <div class="spacer-small"></div>
+      <code>
+        shape().out()
+      </code>
+      <section>
+        But who needs triangles when you have...
+      </section>
+      <div class="spacer-small"></div>
+      <code>
+        // hexagons
+        shape(6).out()
+        // and comments!
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        shape(6, 0.1, 1).out()
+      </code>
       <div class="spacer-small"></div>
 
-
-
-
-      <h2>Colors</h2>
       <section>
-        <p>Colors in Hydra are represented as RGB values. The values range from 0 to 1, with 0 being the lowest value
-          and 1 being the highest value. You can use the <code>solid</code> source to create solid colors.</p>
+        Now, Hydra also has some super powers
       </section>
+      <section class="emoji">
+        🦾🦾🦾
+      </section>
+      <section>
+        Most <b>number</b> type input can also take an <b>array</b> of numbers
+      </section>
+      <div class="spacer-small"></div>
+      <code>
+        shape(
+          [3, 6], 
+          [.6, .1, .2, .9]
+        ).out()
+      </code>
+      <div class="spacer-small"></div>
+      <section>
+        What's even more, these <b>arrays</b> come packed with their own magic tricks!
+      </section>
+      <section class="emoji">
+        🪄🪄🪄
+      </section>
+      <div class="spacer-mini"></div>
+
+      <h2 class="hydra-array">array functions</h2>
+      <section>
+        <pre>fast( speed = 1 )</pre>
+        <pre>smooth( smooth = 1)</pre>
+        <pre>ease( ease = 'linear' )</pre>
+        <pre>offset( offset = 0.5 )</pre>
+        <pre>fit( low = 0, high = 1)</pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        shape(
+          [3, 6].smooth(), 
+          [.6, .1, .2, .9]
+        ).out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        shape(
+          [3, 6].smooth(), 
+          [.6, .1, .2, .9].smooth().fast(3).ease('easeInOutCubic')
+        ).out()
+      </code>
+      <div class="spacer"></div>
+      <pre class="emoji">
+        🤯
+      </pre>
       <div class="spacer"></div>
 
-      <h2>Blending</h2>
+      <h2 class="hydra-source">noise</h2>
       <section>
-        <p>Blending is the process of combining two or more sources together to create a new source. Hydra provides
-          several blending modes that you can use to create different effects.</p>
+        <pre>
+          noise( scale = 10, offset = 0.1 )
+        </pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        noise().out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        noise([9, 99].smooth().fast(0.3))
+        .out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        noise(11, [0.1, 0.8].smooth())
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+      <h2 class="hydra-source">voronoi</h2>
+      <section>
+        <pre class="multi-line">
+          voronoi( 
+            scale = 5, 
+            speed = 0.3, 
+            blending = 0.3)</pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        voronoi().out()
+      </code>
+      <div class="spacer"></div>
+
+      <h2 class="hydra-source">osc</h2>
+      <section>
+        <pre class="multi-line">
+          osc(
+            frequency = 60,
+            sync = 0.1,
+            offset)</pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        osc().out()
+      </code>
+      <div class="spacer"></div>
+      <section>
+        more superpowers!
+        functions & time
+      </section>
+      <code>
+        // offset
+        osc(20, 0.03, 
+          () => Math.sin(time))
+        .out(o0)
+      </code>
+
+      <h2>shortcuts</h2>
+      <section>
         <ul>
-          <li>add - adds the values of the sources together</li>
-          <li>diff - subtracts the values of the sources</li>
-          <li>mult - multiplies the values of the sources</li>
-          <li>screen - screens the values of the sources</li>
-          <li>overlay - overlays the values of the sources</li>
-          <li>hardlight - hardlights the values of the sources</li>
-          <li>lighten - lightens the values of the sources</li>
-          <li>darken - darkens the values of the sources</li>
-          <li>difference - calculates the absolute difference between the values of the sources</li>
-          <li>exclusion - similar to difference, but with lower contrast</li>
-          <li>hue - changes the hue of the source</li>
-          <li>saturation - changes the saturation of the source</li>
-          <li>brightness - changes the brightness of the source</li>
-          <li>color - changes the color of the source</li>
-          <li>luminosity - changes the luminosity of the source</li>
+          <li>
+            <b>CTRL-Enter</b>: run a line of code
+          </li>
+          <li>
+            <b>CTRL-Shift-Enter</b>: run all code on screen
+          </li>
+          <li>
+            <b>ALT-Enter</b>: run a block
+          </li>
+          <li>
+            <b>CTRL-Shift-H</b>: hide or show code
+          </li>
+          <li>
+            <b>CTRL-Shift-F</b>: format code using Prettier
+          </li>
+          <li>
+            <b>CTRL-Shift-S</b>: Save screenshot and download as local file
+          </li>
+          <li>
+            <b>CTRL-Shift-G</b>: Share to twitter (if available). Shares to @hydra_patterns
+          </li>
         </ul>
-      </section>
-      <div class="spacer"></div>
 
-      <h2>Geometry</h2>
-      <section>
-        <p>Hydra provides several functions that you can use to manipulate the geometry of the sources. These functions
-          allow you to scale, rotate, translate, and mask the sources to create different effects.</p>
-        <ul>
-          <li>scale - scales the source</li>
-          <li>rotate - rotates the source</li>
-          <li>translate - translates the source</li>
-          <li>mask - masks the source</li>
-          <li>repeat - repeats the source</li>
-          <li>pixelate - pixelates the source</li>
-          <li>modulate - modulates the source</li>
-          <li>modulateHue - modulates the hue of the source</li>
-          <li>modulatePixelate - modulates the pixelation of the source</li>
-          <li>modulateScale - modulates the scale of the source</li>
-          <li>modulateRotate - modulates the rotation of the source</li>
-          <li>modulateKaleid - modulates the kaleidoscope effect of the source</li>
-          <li>modulateRepeat - modulates the repetition of the source</li>
-          <li>modulateScroll - modulates the scrolling of the source</li>
-          <li>modulateScale - modulates the scale of the source</li>
-          <li>modulateRotate - modulates the rotation of the source</li>
-          <li>modulateKaleid - modulates the kaleidoscope effect of the source</li>
-          <li>modulateRepeat - modulates the repetition of the source</li>
-          <li>modulateScroll - modulates the scrolling of the source</li>
-        </ul>
       </section>
-      <div class="spacer"></div>
 
+      <div class="spacer"></div>
+      <div class="spacer"></div>
     </div>
     <!-- handling the intersection observers -->
     <script src="./script.js"></script>
