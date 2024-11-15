@@ -92,21 +92,6 @@ code {
   mix-blend-mode: multiply;
 }
 
-@media (max-width: 768px) {
-  code {
-    font-size: large;
-    padding-right: 1.5rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
 canvas {
   overflow-y: hidden;
   position: fixed;
@@ -144,15 +129,45 @@ canvas {
 }
 
 .spacer {
-  /* width: 512px; */
   height: 768px;
   position: relative;
 
 }
 
 .spacer-small {
-  /* width: 128px; */
   height: 256px;
   position: relative;
 
+}
+
+
+@media (max-width: 768px) {
+  code {
+    font-size: large;
+    padding-right: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    max-width: 6rem;
+  }
+
+  .avatar {
+    max-width: 5rem;
+  }
+
+  .spacer {
+    height: 20rem;
+  }
+
+  .spacer-small {
+    height: 5rem;
+  }
 }

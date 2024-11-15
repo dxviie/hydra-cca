@@ -124,10 +124,10 @@
         .layer(src(o0)
         .scale(1.01).mask(
           shape(99)
-          .scale(1, 1, () => window.innerWidth / window.innerHeight)))
+          .scale(1.5, 1.5, () => window.innerWidth / window.innerHeight)))
         .blend(
           shape(99)
-          .scale(1,1,() => window.innerWidth / window.innerHeight)
+          .scale(1.5, 1.5, () => window.innerWidth / window.innerHeight)
           .mult(osc(20, 0.1, 2))
           , 0.1)
         .out()
