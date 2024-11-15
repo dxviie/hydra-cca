@@ -1,3 +1,5 @@
+![hydra.cca.codes.screenshot.png](https://raw.githubusercontent.com/dxviie/hydra-cca/8922766ef5f84323ad76f4f4ed33f497dfb24eff/cover.png?raw=true)
+
 # hydra-cca
 Repository for the CCA flash-talk on 17th November 2024
 
