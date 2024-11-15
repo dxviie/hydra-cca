@@ -104,10 +104,15 @@ p {
   line-height: 0.6
 }
 
+.hydra-synth-settings {
+  border-bottom: 4px solid hsl(250, 100%, 70%);
+  line-height: 0.6
+}
+
 code {
   opacity: .8;
   font-family: "Pixelify Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   border: solid white 2px;
   color: #99cc99;
@@ -127,7 +132,7 @@ canvas {
   width: 100%;
   height: 100%;
   display: block;
-  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
 }
 
 #container {
@@ -154,17 +159,27 @@ canvas {
 }
 
 .spacer {
-  height: 768px;
+  height: 75vh;
   position: relative;
 
 }
 
 .spacer-small {
-  height: 256px;
+  height: 50vh;
   position: relative;
-
 }
 
+.spacer-mini {
+  height: 15vh;
+  position: relative;
+}
+
+pre {
+  font-size: xx-large;
+  white-space: normal;
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 100;
+}
 
 @media (max-width: 768px) {
   code {

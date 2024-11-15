@@ -224,17 +224,20 @@
       <div class="spacer"></div>
 
       <section>
-        There are five types of functions in hydra:<br /> <span class="hydra-source">source</span>, <span
+        There are five main types of functions in hydra:<br /> <span class="hydra-source">source</span>, <span
           class="hydra-geometry">geometry</span>,
         <span class="hydra-color">color</span>, <span class="hydra-blend">blend</span> and <span
           class="hydra-modulate">modulate</span>
       </section>
       <div class="spacer-small"></div>
 
+      <section>
+        Sources seem like a good place to start, no?
+      </section>
+      <div class="spacer-small"></div>
+
       <h2 class="hydra-source">Sources</h2>
       <section>
-        <p>Hydra uses a few different types of sources to create visuals. These sources can be combined and manipulated
-          in various ways to create complex visuals.</p>
         <ul>
           <li><span class="hydra-source">solid</span>: solid colors</li>
           <li><span class="hydra-source">gradient</span>: gradients</li>
@@ -246,7 +249,67 @@
           <li>...</li>
         </ul>
       </section>
+      <div class="spacer-small"></div>
+
+      <h2 class="hydra-source">solid</h2>
+      <section>
+        <pre>
+          solid( r, g, b, a = 1 )
+        </pre>
+      </section>
+      <code>
+        solid(1, 0, 0).out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        solid(0, 1, 0).out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        solid(0, 0, 1).out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        solid(0, 0, 99999).out()
+      </code>
       <div class="spacer"></div>
+
+      <h2 class="hydra-source">gradient</h2>
+      <section>
+        <pre>
+          gradient( speed )
+        </pre>
+      </section>
+      <code>
+        gradient(0).out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        speed = 1;
+        gradient(1).out()
+      </code>
+      <div class="spacer-small"></div>
+      <h2 class="hydra-synth-settings">speed</h2>
+      <section>
+        Changes the overall speed
+      </section>
+      <code>
+        speed = 10;
+        gradient(1).out()
+      </code>
+      <div class="spacer-mini"></div>
+      <section>
+        is the same as
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        speed = 1;
+        gradient(10).out()
+      </code>
+      <div class="spacer-small"></div>
+
+
+
 
       <h2>Colors</h2>
       <section>
