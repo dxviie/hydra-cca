@@ -580,6 +580,111 @@
       </code>
       <div class="spacer"></div>
 
+      <h2 class="hydra-source">src</h2>
+      <section>
+        but what about
+        <pre>
+          .out()
+        </pre>
+        ?
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        osc().out(o0);
+        shape().out(o1);
+        voronoi().out(o2);
+        gradient().out(o3);
+
+        render();
+      </code>
+      <div class="spacer-small"></div>
+      <section>
+        <pre>
+          src( tex )
+        </pre>
+      </section>
+      <div class="spacer-small"></div>
+      <code>
+        src(o0)
+        .modulate(noise(3), 0.005)
+        .blend(shape(4), 0.01)
+        .out(o0)
+      </code>
+      <pre class="emoji">
+        🔊🎸🔊🎸🔊
+      </pre>
+      <div class="spacer-small"></div>
+      <pre class="emoji">
+        😮
+      </pre>
+      <div class="spacer-small"></div>
+
+      <h2 class="hydra-geometry">Geometry</h2>
+      <section>
+        operates on a texture:
+        <pre>rotate( angle = 10, speed )</pre>
+        <pre class="multi-line">scale( 
+          amount = 1.5, 
+          xMult = 1, 
+          yMult = 1, 
+          offsetX = 0.5, 
+          offsetY = 0.5 
+        )</pre>
+        <pre>pixelate( pixelX = 20, pixelY = 20)</pre>
+        <pre>kaleid( nSides = 4 )</pre>
+        <pre>...</pre>
+      </section>
+      <div class="spacer-mini"></div>
+
+      <code>
+        noise()
+        .pixelate(20, 20)
+        .out()
+      </code>
+      <div class="spacer"></div>
+      <code>
+        noise()
+        .kaleid(9)
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+      <h2 class="hydra-geometry">repeat</h2>
+      <section>
+        <pre class="multi-line">repeat( 
+          repeatX = 3, 
+          repeatY = 3, 
+          offsetX, 
+          offsetY )</pre>
+        <pre>repeatX( reps = 3, offset )</pre>
+        <pre>repeatY( reps = 3, offset )</pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        shape()
+        .repeat()
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+      <h2 class="hydra-geometry">scroll</h2>
+      <section>
+        <pre class="multi-line">scroll( 
+          scrollX = 0.5, 
+          scrollY = 0.5, 
+          speedX, 
+          speedY )</pre>
+        <pre>scrollX( scrollX = 0.5, speed )</pre>
+        <pre>scrollY( scrollY = 0.5, speed )</pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        shape()
+        .scroll(0.1, 0.1, 0.9, 0.3)
+        .out()
+      </code>
+      <div class="spacer"></div>
+
       <h2>shortcuts</h2>
       <section>
         <ul>
