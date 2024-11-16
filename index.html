@@ -389,7 +389,7 @@
       <div class="spacer-small"></div>
       <code>
         shape(
-          [3, 6]
+          [3, 9]
             .smooth(), 
           [.6, .1, .2, .9]
             .smooth()
@@ -458,17 +458,127 @@
       <code>
         osc().out()
       </code>
-      <div class="spacer"></div>
+      <div class="spacer-mini"></div>
       <section>
-        more superpowers!
-        functions & time
+        offset?
       </section>
+      <div class="spacer-mini"></div>
+      <code>
+        osc(1, 1, 0)
+        .out()
+      </code>
+      <div class="spacer-mini"></div>
+      <section>
+        offset => color space <br />
+        <pre>
+          0 .. Math.PI/2
+        </pre>
+      </section>
+      <div class="spacer-mini"></div>
+      <code>
+        osc(1, 1, Math.PI/2)
+        .out()
+      </code>
+      <div class="spacer-small"></div>
+      <code>
+        osc(1, 1, 
+          [Math.PI/2, Math.PI*2].smooth()
+        )
+        .out()
+      </code>
+      <div class="spacer-small"></div>
+      <section>
+        Can you guess what's next? 🧙
+      </section>
+      <div class="spacer-small"></div>
+      <section>
+        Right! <b>Magic!</b>
+      </section>
+      <p class="emoji">
+        🪄🪄🪄
+      </p>
+      <div class="spacer-mini"></div>
+      <section>
+        Each <b>parameter</b> can also be a <b>function</b>
+      </section>
+      <div class="spacer-mini"></div>
       <code>
         // offset
-        osc(20, 0.03, 
-          () => Math.sin(time))
-        .out(o0)
+        osc(1, 1, 
+          () => {
+            console.info(Math.round(time));
+            return Math.sin(time / 99) 
+                    * (Math.PI/2);
+          })
+        .out()
       </code>
+      <div class="spacer-mini"></div>
+
+      <pre class="emoji">
+        ⏱️
+      </pre>
+      <section>
+        <b>time</b> is on our side!
+      </section>
+      <div class="spacer-mini"></div>
+
+      <h2 class="hydra-synth-settings">
+        Synth Settings
+      </h2>
+      <section>
+        <ul>
+          <li><span class="hydra-synth-settings">speed</span>: change overall speed (R/W)</li>
+          <li><span class="hydra-synth-settings">bpm</span>: change overall bpm (R/W)</li>
+          <li><span class="hydra-synth-settings">width</span>: canvas width</li>
+          <li><span class="hydra-synth-settings">height</span>: canvas height</li>
+          <li><span class="hydra-synth-settings">mouse</span>: mouse coordinates ({x, y})</li>
+          <li><span class="hydra-synth-settings">time</span>: tick tock tick tock</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <div class="spacer-small"></div>
+      <code>
+        shape(99)
+        .scroll(
+          () => -mouse.x / width + width / 4, 
+          () => -mouse.y / height + height)
+        .out()
+      </code>
+      <div class="spacer"></div>
+
+
+      <pre class="emoji">
+        💡
+      </pre>
+      <code>
+        shape(99)
+        .out();
+      </code>
+      <section>
+        Is it round?
+      </section>
+      <div class="spacer"></div>
+      <code>
+        shape(99)
+        .scale(1, 1, 
+          window.innerWidth / 
+          window.innerHeight
+        )
+        .out()
+      </code>
+      <section>
+        What about resizing?
+      </section>
+      <div class="spacer"></div>
+      <code>
+        shape(99)
+        .scale(1, 1, () =>
+          window.innerWidth / 
+          window.innerHeight
+        )
+        .out()
+      </code>
+      <div class="spacer"></div>
 
       <h2>shortcuts</h2>
       <section>

@@ -30,9 +30,12 @@ for (const cb of codeblocks) {
       let code = cb.textContent
         .split('\n')
         .filter(line => !line.trim().startsWith('//'))
-        .join('\n')
-        .replace(/\n/g, '')
-        .replace(/ /g, '');
+        .map(line => line.trim())
+        .join('')
+        .replace(/\s+/g, ' ')  // first convert all whitespace sequences to single spaces
+        .replace(/\s*([{,();}])\s*/g, '$1')  // remove spaces around brackets/punctuation
+        .replace(/\s+/g, '')  // remove remaining spaces, except...
+        .replace(/return(\w)/, 'return $1');  // add back space after return
       render(o0);
       setTimeout(() => {
         eval(code)
