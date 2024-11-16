@@ -67,7 +67,7 @@
         solid(1,1,1)
         .out()
       </code>
-      <div class="spacer-mini"></div>
+      <div class="spacer-small"></div>
 
       🐰
       <h2>What is Hydra?</h2>
@@ -352,7 +352,7 @@
         🦾🦾🦾
       </section>
       <section>
-        Most <b>number</b> type input can also take an <b>array</b> of numbers
+        All <b>number</b> type input can also take an <b>array</b> of numbers
       </section>
       <div class="spacer-small"></div>
       <code>
@@ -381,15 +381,20 @@
       <div class="spacer-mini"></div>
       <code>
         shape(
-          [3, 6].smooth(), 
+          [3, 6]
+            .smooth(), 
           [.6, .1, .2, .9]
         ).out()
       </code>
       <div class="spacer-small"></div>
       <code>
         shape(
-          [3, 6].smooth(), 
-          [.6, .1, .2, .9].smooth().fast(3).ease('easeInOutCubic')
+          [3, 6]
+            .smooth(), 
+          [.6, .1, .2, .9]
+            .smooth()
+            .fast(3)
+            .ease('easeInOutCubic')
         ).out()
       </code>
       <div class="spacer"></div>
@@ -410,12 +415,19 @@
       </code>
       <div class="spacer-small"></div>
       <code>
-        noise([9, 99].smooth().fast(0.3))
+        noise(
+          [9, 99]
+            .smooth()
+            .fast(0.3)
+          )
         .out()
       </code>
       <div class="spacer-small"></div>
       <code>
-        noise(11, [0.1, 0.8].smooth())
+        noise(
+          11, 
+          [0.1, 0.8].smooth()
+        )
         .out()
       </code>
       <div class="spacer"></div>
