@@ -110,6 +110,16 @@ section {
   line-height: 0.6
 }
 
+.hydra-external-sources {
+  border-bottom: 4px solid hsl(210, 100%, 70%);
+  line-height: 0.6
+}
+
+.hydra-audio {
+  border-bottom: 4px solid hsl(330, 100%, 70%);
+  line-height: 0.6
+}
+
 code {
   opacity: .8;
   font-family: "Pixelify Sans", sans-serif;
