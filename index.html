@@ -38,7 +38,7 @@
 <body>
   <div class="scroll-widget collapsed">
     <div class="widget-controls">
-      <input type="range" min="50" max="500" value="200" id="speedControl">
+      <input type="range" min="10" max="200" value="60" id="speedControl">
       <button class="play-button">⏵</button>
       <span class="time-display">0:00</span>
     </div>
@@ -1156,7 +1156,7 @@
           this.speedControl = this.widget.querySelector('#speedControl');
           this.timeDisplay = this.widget.querySelector('.time-display');
           this.isPlaying = false;
-          this.scrollSpeed = 200; // pixels per second
+          this.scrollSpeed = 60; // pixels per second (default)
           this.lastTimestamp = null;
           this.init();
         }
@@ -1208,6 +1208,15 @@
           }
         }
 
+        updateTimeEstimate() {
+          const remainingPixels = document.documentElement.scrollHeight -
+            (window.scrollY + window.innerHeight);
+          const remainingSeconds = remainingPixels / (this.scrollSpeed * 1.5);
+          const minutes = Math.floor(remainingSeconds / 60);
+          const seconds = Math.floor(remainingSeconds % 60);
+          this.timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
         animate(timestamp) {
           if (!this.isPlaying) return;
 
@@ -1216,7 +1225,7 @@
           }
 
           const elapsed = timestamp - this.lastTimestamp;
-          const pixelsToScroll = (this.scrollSpeed * elapsed) / 1000;
+          const pixelsToScroll = (this.scrollSpeed * 1.5 * elapsed) / 1000;
 
           window.scrollBy(0, pixelsToScroll);
           this.lastTimestamp = timestamp;
@@ -1228,15 +1237,6 @@
           }
 
           requestAnimationFrame(this.animate);
-        }
-
-        updateTimeEstimate() {
-          const remainingPixels = document.documentElement.scrollHeight -
-            (window.scrollY + window.innerHeight);
-          const remainingSeconds = remainingPixels / this.scrollSpeed;
-          const minutes = Math.floor(remainingSeconds / 60);
-          const seconds = Math.floor(remainingSeconds % 60);
-          this.timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
         }
       }
 
