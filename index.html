@@ -36,6 +36,14 @@
 </head>
 
 <body>
+  <div class="scroll-widget collapsed">
+    <div class="widget-controls">
+      <input type="range" min="50" max="500" value="200" id="speedControl">
+      <button class="play-button">⏵</button>
+      <span class="time-display">0:00</span>
+    </div>
+    <div class="widget-icon">📜</div>
+  </div>
   <div id="container">
     <div id="main">
       <h1>Hydra⚡Intro</h1>
@@ -1139,6 +1147,102 @@
     </div>
     <!-- handling the intersection observers -->
     <script src="./script.js"></script>
+    <!-- Claude generated auto scroller -->
+    <script>
+      class ScrollWidget {
+        constructor() {
+          this.widget = document.querySelector('.scroll-widget');
+          this.playButton = this.widget.querySelector('.play-button');
+          this.speedControl = this.widget.querySelector('#speedControl');
+          this.timeDisplay = this.widget.querySelector('.time-display');
+          this.isPlaying = false;
+          this.scrollSpeed = 200; // pixels per second
+          this.lastTimestamp = null;
+          this.init();
+        }
+
+        init() {
+          // Toggle widget expansion
+          this.widget.addEventListener('click', (e) => {
+            if (e.target.closest('.widget-controls')) return;
+            this.widget.classList.toggle('collapsed');
+            this.widget.classList.toggle('expanded');
+          });
+
+          // Speed control
+          this.speedControl.addEventListener('input', (e) => {
+            this.scrollSpeed = parseInt(e.target.value);
+            this.updateTimeEstimate();
+          });
+
+          // Play/Pause button
+          this.playButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.togglePlay();
+          });
+
+          // Space bar control
+          document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && e.target === document.body) {
+              e.preventDefault();
+              this.togglePlay();
+            }
+          });
+
+          // Update time estimate on scroll
+          window.addEventListener('scroll', () => {
+            this.updateTimeEstimate();
+          });
+
+          this.updateTimeEstimate();
+          this.animate = this.animate.bind(this);
+        }
+
+        togglePlay() {
+          this.isPlaying = !this.isPlaying;
+          this.playButton.textContent = this.isPlaying ? '⏸' : '⏵';
+          this.lastTimestamp = null;
+
+          if (this.isPlaying) {
+            requestAnimationFrame(this.animate);
+          }
+        }
+
+        animate(timestamp) {
+          if (!this.isPlaying) return;
+
+          if (!this.lastTimestamp) {
+            this.lastTimestamp = timestamp;
+          }
+
+          const elapsed = timestamp - this.lastTimestamp;
+          const pixelsToScroll = (this.scrollSpeed * elapsed) / 1000;
+
+          window.scrollBy(0, pixelsToScroll);
+          this.lastTimestamp = timestamp;
+
+          if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+            this.isPlaying = false;
+            this.playButton.textContent = '⏵';
+            return;
+          }
+
+          requestAnimationFrame(this.animate);
+        }
+
+        updateTimeEstimate() {
+          const remainingPixels = document.documentElement.scrollHeight -
+            (window.scrollY + window.innerHeight);
+          const remainingSeconds = remainingPixels / this.scrollSpeed;
+          const minutes = Math.floor(remainingSeconds / 60);
+          const seconds = Math.floor(remainingSeconds % 60);
+          this.timeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+      }
+
+      // Initialize the widget
+      new ScrollWidget();
+    </script>
 </body>
 
 </html>
